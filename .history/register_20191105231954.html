@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>RoadForecast</title>
+    <meta name="description" content="Road Forecast - Check the weather and choose the right time for the trip. " />
+    <meta name="keywords" content="road, forecast, weather, trip" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link href="css/fontello.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+
+            <div class="logo">
+                <i class="icon-road"></i>RoadForecast
+            </div>
+            <br /> <span>Don't be surprised by the weather</span>
+        </div>
+
+        <header>
+            <!-----------------------------------<NavBar------------------------------------>
+            <nav id="navbar" class="navbar navbar-light bg-info bg-ustaw navbar-expand-lg">
+                <div class="navLogo" onClick="history.go(0)" VALUE="Refresh">
+                    <a class="navbar-brand" href="index.html"><i class="icon-road" class="d-inline-block mr-5"></i>RoadForecast</a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-labe="przelacznik togglera">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainmenu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active mr-4">
+                            <a class="nav-link" href="#" role="button">Start</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle mr-4" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true">Forecast</a>
+
+                            <div class="dropdown-menu" aria-labelledby="submenu">
+                                <a class="dropdown-item" href="#">By city name</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">By Zip code</a>
+                            </div>
+
+                        </li>
+
+                        <li class="nav-item mr-4">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Log in</a>
+                        </li>
+                    </ul>
+
+                    <!-- <form class="form-inline">
+                        <input class="form-control mr-1" type="search" placeholder="Wyszukaj" aria-label="Wyszukaj">
+                        <button class="btn btn-light" type="submit">Znajdź</button>
+                    </form> -->
+                </div>
+
+            </nav>
+            <!-----------------------------------NavBar>------------------------------------>
+
+        </header>
+        <div class="content">
+            <!-----------------------------------<ZAWARTOSC------------------------------------>
+
+            <div id="formDiv">
+                <!-- <h3>Type your account informations</h3> -->
+
+                <form>
+                    <label for="fname">Registration</label>
+                    <input type="text" id="name" name="name" placeholder="Name">
+                    <input type="text" id="email" name="email" placeholder="E-mail Address *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <input type="text" id="pass" name="pass" placeholder="Password *  (at least one number required)" pattern="(?=.*\d)(?=.*[a-z]).{6,}"required>
+                    <input type="text" id="pass2" name="pass" placeholder="Confirm Password *" required>
+                    <input type="submit" value="Log in">
+                    <a href="login.html" style="text-decoration: none;">Already registered? <button type='button' id="signIp" class="button" >Sign ip</button></a>
+                </form>
+            </div>
+
+            <div class="weatherApps">
+
+                <div id="a" class="weatherApp">
+                </div>
+            </div>
+            <!-- weatherApps >end< -->
+            <!-----------------------------------ZAWARTOSC>----------------------------------->
+
+        </div>
+        <div class="socials">
+            <div class="socialdivs">
+                <div class="fb">
+                    <i class="icon-facebook"></i>
+                </div>
+                <div class="yt">
+                    <i class="icon-youtube"></i>
+                </div>
+                <div class="tt">
+                    <i class="icon-twitter"></i>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+        <div class="footer">RoadForecast - Check the weather and choose the right time for the trip.
+            <br />The website was created in 2018. &copy All rights reserved.</div>
+
+    </div>
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+<!--    <script>
+        $(document).ready(function() {
+            var NavY = $('#navbar').offset().top;
+
+            var stickyNav = function() {
+                var ScrollY = $(window).scrollTop();
+
+                if (ScrollY > NavY) {
+                    $('.navbar').addClass('sticky');
+                } else {
+                    $('.navbar').removeClass('sticky');
+                }
+            };
+
+            stickyNav();
+
+            $(window).scroll(function() {
+                stickyNav();
+            });
+        });
+    </script>  -->  <!------skrypt do sticky bar----->
+
+    <!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
+
+</html>
