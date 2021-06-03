@@ -172,7 +172,8 @@ $(document).ready(function(){
                     city4 = this.querySelector('#city4').value;
                     $("#wApp4").css("display","inline-block");
                     if(n>6){
-                        city5 = this.querySelector('#city5').value;                $("#wApp5").css("display","inline-block");
+                        city5 = this.querySelector('#city5').value;
+                        $("#wApp5").css("display","inline-block");
                     }
                 }
             }
@@ -185,7 +186,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#btnPlus").click(function(){
         var correctCityName = "city"+(n-1);
-        $("#lastLabel").before("<input type='text' id='"+correctCityName+"' name='lastname' placeholder='Choose your destination..' required>");
+        $("#city6").before("<input type='text' id='"+correctCityName+"' name='lastname' placeholder='Choose your destination..' required>");
         n++;
         $("#btnMinus").css("visibility","visible");
         if (n>6){
@@ -217,3 +218,6 @@ function kelvinToCelsius(k){
 function milesToKilometers(m){
     return Math.round(m/1.609344*10)/10;
 }                               //Change mile to km
+
+
+// new

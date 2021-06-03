@@ -43,7 +43,7 @@ function updateByGeo(lat, lon){
 	"lat=" + lat +
 	"&lon=" + lon +
 	"&APPID=" + APPID;
-    sendRequest(url);
+    sendRequest(url);    
 }
 
 
@@ -68,13 +68,13 @@ function sendRequest(url){
         weather.direction = degreesToDirection(data.wind.deg)
 	    weather.location = data.name;
 	    /* NEW */
-	    weather.temp = K2C(data.main.temp);
+	    weather.temp = K2C(data.main.temp);		
 	    update(weather);
 	}
     };
 
     xmlhttp.open("GET", url, true);
-    xmlhttp.send();
+    xmlhttp.send();    
 }
 
 function degreesToDirection(degrees){
@@ -92,6 +92,7 @@ function degreesToDirection(degrees){
 	high = (high + range) % 360;
     }
     return "N";
+    
 }
 
 //function K2F(k){
