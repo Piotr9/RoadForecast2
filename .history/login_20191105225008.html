@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="pl">
 
 <head>
@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&ampsubset=latin-ext" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" />
 
     <link href="css/fontello.css" rel="stylesheet" type="text/css" />
@@ -85,13 +85,16 @@
                 <!-- <h3>Type your account informations</h3> -->
 
                 <form>
-                    <label for="fname">Registration</label>
-                    <input type="text" id="name" name="name" placeholder="Name">
-                    <input type="text" id="email" name="email" placeholder="E-mail Address *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                    <input type="text" id="pass" name="pass" placeholder="Password *      (at least one number required)" pattern="(?=.*\d)(?=.*[a-z]).{6,}"required>
-                    <input type="text" id="pass2" name="pass" placeholder="Confirm Password *" required>
+                    <label for="fname">Log In to Your Account</label>
+                    <input type="text" id="city0" name="firstname" placeholder="E-mail Address" required>
+                    <!-- <label id="lastLabel" for="lname">Password:</label>
+                    <div class="buttonsBox">
+                        <button type='button' id="btnPlus" class="button" >+</button>
+                        <button type='button' id="btnMinus"class= "button" onClick="history.go(0)" VALUE="Refresh">Reset</button>
+                    </div> -->
+                    <input type="text" id="city6" name="lastname" placeholder="Password" required>
                     <input type="submit" value="Log in">
-                    <a href="login.html" style="text-decoration: none;">Already registered? <button type='button' id="signIp" class="button" >Sign ip</button></a>
+                    <span>Don't have an account? <button formaction="register.html" type='button' id="signUp" class="button" >Sign up</button></span>
                 </form>
             </div>
 
