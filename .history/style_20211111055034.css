@@ -358,10 +358,8 @@ table{
     display: inline-block;
 }
 
-.error {
-    font-size: 20px;
-    padding-bottom: 8px;
-    font-weight: 500;
+#error {
+    text: red;
 }
 
 .button {
