@@ -39,7 +39,7 @@ html {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
@@ -642,7 +642,7 @@ html {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .col-lg {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -1088,7 +1088,7 @@ html {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .d-lg-none {
     display: none !important;
   }
@@ -1632,7 +1632,7 @@ html {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .flex-lg-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
