@@ -128,6 +128,7 @@ body
 	float: left;
     padding: auto;
     padding: 50px;
+    box-shadow: #000000;
 }
 .loc:hover
 {
