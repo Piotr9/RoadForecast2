@@ -33,8 +33,33 @@
         z-index: 100;
       }
     </style>
-      <script src="https://use.fontawesome.com/e900500174.js"></script>
-    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBMUO06IdG0N1jblVwjIury1LQ3HzOridg",
+        authDomain: "roadforecast.firebaseapp.com",
+        projectId: "roadforecast",
+        appId: "1:528065533478:web:530bd5c457ffd69585f8e7",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // const auth = firebase.auth();
+      const firestore = firebase.firestore();
+
+      firestore.collection('search_result').doc('sortable').get().then((snapshot) => {
+        //console.log(snapshot.data().elementsHTML);
+        snapshot.data().sortable.forEach(results => {
+          console.log(innerHTML);
+          document.getElementById('resultsTable').innerHTML += results;
+
+        })
+      });
+      </script>
   </head>
 
   <body>
@@ -96,7 +121,7 @@
               </li>
 
               <li class="nav-item mr-4">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
 
               <li class="nav-item">
@@ -104,37 +129,46 @@
               </li>
             </ul>
 
+            <!-- <form class="form-inline">
+                        <input class="form-control mr-1" type="search" placeholder="Wyszukaj" aria-label="Wyszukaj">
+                        <button class="btn btn-light" type="submit">Znajdź</button>
+                    </form> -->
           </div>
         </nav>
         <!-----------------------------------NavBar>------------------------------------>
       </header>
       <div class="content">
         <!-----------------------------------<ZAWARTOSC------------------------------------>
+
         <div id="formDiv">
-          <h2><i class="fa fa-address-card-o" aria-hidden="true"></i> Contact</h2>
-          <div class="socials">
-            <div class="contactdivs">
-              <a href="tel:+48727440427">
-                <div class="call">
-                  <i class="fa fa-phone-square fa-3x" aria-hidden="true"></i>
-                  <h4>727 440 427</h4>
-                </div>
-              </a>
-              <a href="mailto:piotrek-manutd@o2.pl">
-                <div class="email">
-                  <i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i>
-                  <h5>foreca@o2.pl</h5>
-                </div>
-              </a>
-              <a href="https://www.google.com/maps/place/D%C5%82uga+11%2F13,+53-657+Wroc%C5%82aw/@51.118644,17.0139717,17z/data=!3m1!4b1!4m5!3m4!1s0x470fe9fcb6bebf4b:0x79816bfb5e44071b!8m2!3d51.1186407!4d17.0161604">
-                <div class="loc">
-                  <i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
-                  <h5>ul. Długa 11/3</br>53-657 Wrocław</h5>
-                </div>
-              </a>
-              <div style="clear: both"></div>
-            </div>
-          </div>
+          <h3>Shearch results</h3>
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">City name</th>
+                <th scope="col">Number of searches</th>
+              </tr>
+            </thead>
+            <tbody id="resultsTable">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Wroclaw</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Lubin</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Lesnica</td>
+                <td>2</td>
+                <td></td>
+              </tr> -->
+            </tbody>
+          </table>
         </div>
 
         <div class="weatherApps">
@@ -170,14 +204,43 @@
     </div>
 
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="jquery-3.2.1.min.js"></script>
+       <script>
+        $(document).ready(function() {
+            var NavY = $('#navbar').offset().top;
+            var stickyNav = function() {
+                var ScrollY = $(window).scrollTop();
+                console.log($('#navbar'));
+                if (ScrollY > NavY) {
+                    $('#navbar').addClass('sticky');
+                } else {
+                    $('#navbar').removeClass('sticky');
+                }
+            };
+
+            stickyNav();
+
+            $(window).scroll(function() {
+                stickyNav();
+            });
+        });
+    </script> 
+    <!------sticky bar script----->
+
     <!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
       crossorigin="anonymous"
     ></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- <script type="text/javascript" src="app.js"></script> -->
+
     <!-- <script type="text/javascript" src="js/results.js"></script> -->
+
   </body>
 </html>

@@ -5,27 +5,43 @@ icon,
 humidity,
 wind,
 direction;
-var city0, city1, city2, city3, city4, city5, city6 = "London";
+var city0,
+  city1,
+  city2,
+  city3,
+  city4,
+  city5,
+  city6 = "London";
 var n = 2;
 var i = 0;
 var f6 = true;
-var f1, f2, f3, f4, f5 = false;
+var f1,
+  f2,
+  f3,
+  f4,
+  f5 = false;
+
   // setTimeout(()=> {
   //   console.log(firebase.auth().currentUser)
   // }, 5000)
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in.
     $("#welcome").css("display", "inline-block");
+    //console.log(user);
   } else {
     $("#welcome").css("display", "none");
+    //console.log(user);
   }
 });
+
 // const logout = document.querySelector('#logout');
 // logout.addEventListener('click', (e) => {
 //     e.preventDefault();
 //     auth.signOut().then(console.log('b'));
 // });
+
 function updateByName(city0) {
   var url =
     "https://cors-everywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?" +
@@ -35,10 +51,11 @@ function updateByName(city0) {
     APPID;
   sendRequest(url);
 } //Update forecast data
+
 function updateByZip(zip){
-  var url = "https://cors-everywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" +
+  var url = "http://api.openweathermap.org/data/2.5/weather?" +
   "zip=" + zip +
-  "&APPID=" +
+  "&APPID=" + 
   APPID;
   sendRequest(url);
 }
@@ -56,6 +73,7 @@ function sendRequest(url) {
       weather.direction = degreesToDirection(data.list[0].wind.deg);
       weather.loc = data.city.name;
       weather.temp = kelvinToCelsius(data.list[0].main.temp);
+
       update(weather);
     }
   };
@@ -64,11 +82,11 @@ function sendRequest(url) {
 } //Send AJAX request
 
 function update(weather) {
-  wind.textContent = weather.wind;
-  direction.textContent = weather.direction;
-  humidity.textContent = weather.humidity;
-  loc.textContent = weather.loc;
-  temp.textContent = weather.temp;
+  wind.innerHTML = weather.wind;
+  direction.innerHTML = weather.direction;
+  humidity.innerHTML = weather.humidity;
+  loc.innerHTML = weather.loc;
+  temp.innerHTML = weather.temp;
   icon.src = "img/codes/" + weather.icon + ".png";
 
   if (f6 == true) {
@@ -224,7 +242,24 @@ function degreesToDirection(degrees) {
   var range = 360 / 16;
   var low = 360 - range / 2;
   var high = (low + range) % 360;
-  var angles = ["N", "NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW",];
+  var angles = [
+    "N",
+    "NNE",
+    "NE",
+    "ENE",
+    "E",
+    "ESE",
+    "SE",
+    "SSE",
+    "S",
+    "SSW",
+    "SW",
+    "WSW",
+    "W",
+    "WNW",
+    "NW",
+    "NNW",
+  ];
   for (i in angles) {
     if (degrees >= low && degrees < high) {
       return angles[i];
@@ -234,7 +269,7 @@ function degreesToDirection(degrees) {
     high = (high + range) % 360;
   }
   return "N";
-} //Change degrees to direction shortcut("NNW")
+} //Change degrees to direction shortcut (eg."NNW")
 
 function kelvinToCelsius(k) {
   return Math.round(k - 273.15);

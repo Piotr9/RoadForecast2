@@ -64,11 +64,11 @@ function sendRequest(url) {
 } //Send AJAX request
 
 function update(weather) {
-  wind.textContent = weather.wind;
-  direction.textContent = weather.direction;
-  humidity.textContent = weather.humidity;
-  loc.textContent = weather.loc;
-  temp.textContent = weather.temp;
+  wind.innerHTML = weather.wind;
+  direction.innerHTML = weather.direction;
+  humidity.innerHTML = weather.humidity;
+  loc.innerHTML = weather.loc;
+  temp.innerHTML = weather.temp;
   icon.src = "img/codes/" + weather.icon + ".png";
 
   if (f6 == true) {
