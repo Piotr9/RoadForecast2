@@ -29,7 +29,7 @@
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 692px;
+  --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -567,7 +567,7 @@ pre code {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
@@ -1170,7 +1170,7 @@ pre code {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .col-lg {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -4152,7 +4152,7 @@ input[type="button"].btn-block {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .navbar-expand-lg {
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
@@ -5505,7 +5505,7 @@ button.close {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .modal-lg {
     max-width: 800px;
   }
@@ -6376,7 +6376,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .d-lg-none {
     display: none !important;
   }
@@ -6963,7 +6963,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .flex-lg-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -7277,7 +7277,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .float-lg-left {
     float: left !important;
   }
@@ -8243,7 +8243,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .m-lg-0 {
     margin: 0 !important;
   }
@@ -8797,7 +8797,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 692px) {
+@media (min-width: 992px) {
   .text-lg-left {
     text-align: left !important;
   }
@@ -8991,10 +8991,10 @@ a.text-dark:hover, a.text-dark:focus {
     size: a3;
   }
   body {
-    min-width: 692px !important;
+    min-width: 992px !important;
   }
   .container {
-    min-width: 692px !important;
+    min-width: 992px !important;
   }
   .navbar {
     display: none;

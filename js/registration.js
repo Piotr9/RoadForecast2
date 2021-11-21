@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
     auth.createUserWithEmailAndPassword(email, pass)
     .then(user =>{
         console.log(user)
-        window.location.href = './login.html'
+        window.location.pathname = './login.html'
     })
     .catch(err => form.querySelector('.error').innerHTML = err.message)
 });
