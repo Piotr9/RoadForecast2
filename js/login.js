@@ -11,7 +11,7 @@ form.addEventListener("submit", (e) => {
 
   .then(user =>{
       console.log(user)
-      window.location.href = './results.html'
+      window.location.pathname = './results.html'
   })
   .catch(err => formDiv.querySelector('.error').innerHTML = err.message)
 });
