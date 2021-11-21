@@ -14,6 +14,8 @@ form.addEventListener('submit', async (e) => {
     const firestore = firebase.firestore();
     const cityDoc = firestore.collection('search_result').doc('cities');
     const cityDocSnapshot = await cityDoc.get();
+    //const sorted = cityDoc.data().orderBy("counter", "desc");
+
     const {
         cities
     } = cityDocSnapshot.data();
@@ -39,20 +41,32 @@ form.addEventListener('submit', async (e) => {
         cities: newCities
     })
 
+
+    //console.log(cityDocSnapshot.entries(cities));
     const entries = Object.entries(cities);
-    //SORT
+
     var arrayOfCites = [];
     arrayOfCites = entries.map(([one, two]) => [two.counter, two.name]);
-    arrayOfCites.sort((a, b) => a[0] - b[0]).reverse();
-    const sortable = arrayOfCites.map((a, b) => `
-    <td>${a[1]}</td>
-    <td>${a[0]}</td>`);
-    firestore.collection('search_result').doc('sortable').set({sortable: sortable});
+    arrayOfCites.sort((a, b) => a[0] - b[0]);
 
-    // const elementsHTML = entries.map(([number, counter]) => `
-    // <td>${counter.name}</td>
-    // <td>${counter.counter}</td>`);
-    // console.log(elementsHTML);
+    const sortable = arrayOfCites.map((a, b) => `
+    <td>${a}</td>
+    <td>${b}</td>`);
+    console.log(arrayOfCites));
+
+    const elementsHTML = entries.map(([number, counter]) => `
+    <td>${counter.name}</td>
+    <td>${counter.counter}</td>`);
+
+
+
     //firestore.collection('search_result').doc('elementsHTML').update({content: elementsHTML});
-    //firestore.collection('search_result').doc('elementsHTML').set({elementsHTML: elementsHTML});
+    firestore.collection('search_result').doc('elementsHTML').set({elementsHTML: elementsHTML});
+    // const elementDoc = firestore.collection('search_result').doc('elementsHTML');
+    // const elementDocSnapshot = await elementDoc.get();
+    // console.log(elementDocSnapshot.data);
+    // const {
+    //     elementsHTML
+    // } = elementDocSnapshot.data();
+
 });

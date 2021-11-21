@@ -40,19 +40,31 @@ form.addEventListener('submit', async (e) => {
     })
 
     const entries = Object.entries(cities);
-    //SORT
+
     var arrayOfCites = [];
     arrayOfCites = entries.map(([one, two]) => [two.counter, two.name]);
     arrayOfCites.sort((a, b) => a[0] - b[0]).reverse();
-    const sortable = arrayOfCites.map((a, b) => `
-    <td>${a[1]}</td>
-    <td>${a[0]}</td>`);
-    firestore.collection('search_result').doc('sortable').set({sortable: sortable});
 
-    // const elementsHTML = entries.map(([number, counter]) => `
-    // <td>${counter.name}</td>
-    // <td>${counter.counter}</td>`);
-    // console.log(elementsHTML);
+    const sortable = arrayOfCites.map((a, b) => `
+    <td>${a[0]}</td>
+    <td>${a[1]}</td>`);
+    console.log(arrayOfCites[1][0]);
+    console.log(sortable);
+
+    const elementsHTML = entries.map(([number, counter]) => `
+    <td>${counter.name}</td>
+    <td>${counter.counter}</td>`);
+
+
+
     //firestore.collection('search_result').doc('elementsHTML').update({content: elementsHTML});
-    //firestore.collection('search_result').doc('elementsHTML').set({elementsHTML: elementsHTML});
+    firestore.collection('search_result').doc('elementsHTML').set({elementsHTML: elementsHTML});
+    firestore.collection('search_result').doc('sorted').set({sorted: sortable});
+
+    // const elementDoc = firestore.collection('search_result').doc('elementsHTML');
+    // const elementDocSnapshot = await elementDoc.get();
+    // console.log(elementDocSnapshot.data);
+    // const {
+    //     elementsHTML
+    // } = elementDocSnapshot.data();
 });
